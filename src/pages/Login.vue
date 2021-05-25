@@ -1,10 +1,13 @@
 <template>
-  <q-page class="column justify-evenly">
+  <q-page class="flex flex-center background">
     <div
-      class="col-auto row justify-center"
-      style="text-align: center;"
+      class="column justify-center items-center q-gutter-y-md"
+      style="text-align: center; width: 80%"
     >
-      <q-card style="width: 30%">
+      <q-card
+        style="width: 20%"
+        class="card q-pb-lg"
+      >
         <q-input
           style="width: 90%"
           outlined
@@ -17,6 +20,12 @@
             <q-icon name="mail" />
           </template>
         </q-input>
+        <span
+          class="q-pb-lg"
+          style="font-weight: 400"
+        >
+          Forgot Password?
+        </span>
         <q-input
           style="width: 90%"
           outlined
@@ -37,13 +46,33 @@
           </template>
         </q-input>
         <q-btn
-          color="blue"
+          class="button"
           label="Logga in"
           style="width: 90%"
           size="lg"
         />
       </q-card>
+      <q-card
+        class="row justify-center items-center text-center"
+        style="width: 20%"
+      >
+        <div>
+          <span
+            class="q-mt-auto"
+            style="font-weight: 400"
+          >
+            New to SunnyCakes?
+          </span>
+          <span
+            class="q-mb-auto"
+            style="font-weight: 400"
+          >
+            Create an account.
+          </span>
+        </div>
+      </q-card>
     </div>
+
   </q-page>
 </template>
 
@@ -60,3 +89,18 @@ export default {
 
 }
 </script>
+
+<style>
+.background {
+  background-image: linear-gradient(#01438a 1%, #ffbe4f);
+}
+.card {
+  background-color: white;
+}
+.input {
+  background-color: white;
+}
+.button {
+  background-color: #01438a;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar v-if="$router.currentRoute.path !== '/login' ">
 
         <q-toolbar-title>
           sunnycakes

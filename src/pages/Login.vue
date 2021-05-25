@@ -4,6 +4,19 @@
       class="column justify-center items-center q-gutter-y-md"
       style="text-align: center; width: 80%"
     >
+      <img
+        class="rotateimg"
+        src="../assets/cake.png"
+        alt="cake"
+        height="100px"
+        width="100px"
+      >
+      <span
+        class="q-mt-auto"
+        style="font-weight: 700; color: #FFCB66; font-size: 300%"
+      >
+        Sunnycakes
+      </span>
       <q-card
         style="width: 20%"
         class="card q-pb-lg"
@@ -22,7 +35,7 @@
         </q-input>
         <span
           class="q-pb-lg q-pt-sm q-mr-lg"
-          style="font-weight: 700; color: #A87A22; float: right"
+          style="font-weight: 700; color: #1451A8; float: right"
         >
           Forgot Password?
         </span>
@@ -65,14 +78,13 @@
           </span>
           <span
             class="q-mb-auto"
-            style="font-weight: 700; color: #A87A22"
+            style="font-weight: 700; color: #1451A8"
           >
             Create an account.
           </span>
         </div>
       </q-card>
     </div>
-
   </q-page>
 </template>
 
@@ -83,17 +95,15 @@ export default {
       username: '',
       password: '',
       loginError: false,
-      isPwd: true
+      isPwd: true,
     }
   }
-
 }
 </script>
 
 <style>
 .background {
   background-image: linear-gradient(#1451a8, #90baf5);
-  /* background-color: #1451a8; */
 }
 .card {
   background-color: #90baf5;
@@ -102,6 +112,13 @@ export default {
   background-color: white;
 }
 .button {
-  background-color: #a87a22;
+  background-color: #ffcb66;
+}
+.rotateimg {
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  transform: rotate(15deg);
 }
 </style>

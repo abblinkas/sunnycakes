@@ -14,15 +14,15 @@
           v-model="username"
           type="email"
           placeholder="Email:"
-          class="q-mx-auto q-pt-lg"
+          class="q-mx-auto q-mt-lg input"
         >
           <template v-slot:prepend>
             <q-icon name="mail" />
           </template>
         </q-input>
         <span
-          class="q-pb-lg"
-          style="font-weight: 400"
+          class="q-pb-lg q-pt-sm q-mr-lg"
+          style="font-weight: 700; color: #A87A22; float: right"
         >
           Forgot Password?
         </span>
@@ -32,7 +32,7 @@
           v-model="password"
           :type="isPwd ? 'password' : 'text'"
           placeholder="Lösenord:"
-          class="q-mx-auto q-py-lg"
+          class="q-mx-auto q-my-lg input"
         >
           <template v-slot:prepend>
             <q-icon name="lock" />
@@ -53,19 +53,19 @@
         />
       </q-card>
       <q-card
-        class="row justify-center items-center text-center"
+        class="row justify-center items-center text-center card"
         style="width: 20%"
       >
-        <div>
+        <div class="q-pa-md">
           <span
             class="q-mt-auto"
-            style="font-weight: 400"
+            style="font-weight: 500"
           >
             New to SunnyCakes?
           </span>
           <span
             class="q-mb-auto"
-            style="font-weight: 400"
+            style="font-weight: 700; color: #A87A22"
           >
             Create an account.
           </span>
@@ -92,15 +92,16 @@ export default {
 
 <style>
 .background {
-  background-image: linear-gradient(#01438a 1%, #ffbe4f);
+  background-image: linear-gradient(#1451a8, #90baf5);
+  /* background-color: #1451a8; */
 }
 .card {
-  background-color: white;
+  background-color: #90baf5;
 }
 .input {
   background-color: white;
 }
 .button {
-  background-color: #01438a;
+  background-color: #a87a22;
 }
 </style>

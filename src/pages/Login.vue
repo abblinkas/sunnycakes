@@ -1,8 +1,8 @@
 <template>
   <q-page class="flex flex-center background">
     <div
-      class="column justify-center items-center q-gutter-y-md"
-      style="text-align: center; width: 80%"
+      class="column justify-even items-center q-gutter-y-md"
+      style="text-align: center; width: 80%; margin-top: -10%"
     >
       <img
         class="rotateimg"
@@ -34,8 +34,8 @@
           </template>
         </q-input>
         <span
-          class="q-pb-lg q-pt-sm q-mr-lg"
-          style="font-weight: 700; color: #1451A8; float: right"
+          class="q-pb-lg q-pt-sm q-mr-lg text"
+          style="float: right"
         >
           Forgot Password?
         </span>
@@ -44,7 +44,7 @@
           outlined
           v-model="password"
           :type="isPwd ? 'password' : 'text'"
-          placeholder="Lösenord:"
+          placeholder="Password:"
           class="q-mx-auto q-my-lg input"
         >
           <template v-slot:prepend>
@@ -76,10 +76,7 @@
           >
             New to SunnyCakes?
           </span>
-          <span
-            class="q-mb-auto"
-            style="font-weight: 700; color: #1451A8"
-          >
+          <span class="q-mb-auto text">
             Create an account.
           </span>
         </div>
@@ -120,5 +117,9 @@ export default {
   -ms-transform: rotate(15deg);
   -o-transform: rotate(15deg);
   transform: rotate(15deg);
+}
+.text {
+  font-weight: 700;
+  color: #1451a8;
 }
 </style>

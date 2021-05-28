@@ -6,7 +6,7 @@
         v-for="n in cakeslist"
         :key="n"
       >
-        <cakecard :kaka="title" />
+        <cakecard :kaka="n" />
       </div>
     </div>
     <q-dialog v-model="alert">

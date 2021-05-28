@@ -7,9 +7,11 @@
         :key="n"
       >
         <cakecard :kaka="n" />
+
       </div>
     </div>
-    <q-dialog v-model="alert">
+    <!-- <biggerCard /> -->
+    <!-- <q-dialog v-model="alert">
       <q-card class="my-card">
         <img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
@@ -20,7 +22,7 @@
 
         <q-card-section class="q-pt-none"> </q-card-section>
       </q-card>
-    </q-dialog>
+    </q-dialog> -->
   </div>
 </template>
 
@@ -41,6 +43,7 @@ export default {
   },
   components: {
     cakecard
+
   }
 
 

@@ -2,7 +2,7 @@
   <div class="q-pa-none full-height">
     <!-- you define your Vue template here -->
     <q-card
-      class="my-card no-margin full-height"
+      class="my-card no-margin full-height "
       @click="alert = true"
     >
       <img
@@ -26,16 +26,9 @@
         flat
         bordered
       >
-        <q-card-section horizontal>
-          <q-card-section class="q-pt-xs">
-            <!-- <div class="text-overline">Overline</div> -->
-            <div class="text-h5 q-mt-sm q-mb-xs">{{kaka.title}}</div>
-            <div class="text-caption text-black">
-              {{kaka.detailDescription}}
-            </div>
-          </q-card-section>
 
-          <q-card-section class="col-5 flex flex-center">
+        <q-card-section>
+          <q-card-section class="col-3 flex flex-center">
             <q-img
               class="rounded-borders"
               style="height: 100%"
@@ -44,23 +37,32 @@
           </q-card-section>
         </q-card-section>
 
+        <q-card-section class="q-pt-xs">
+          <!-- <div class="text-overline">Overline</div> -->
+          <div
+            class="text-h4 q-mt-sm q-mb-xs"
+            vertical
+            align="center"
+          >{{kaka.title}}</div>
+          <div class="text-h7 text-black">
+            {{kaka.detailDescription}}
+          </div>
+          <div
+            class="text-h3"
+            vertical
+            align="center"
+          >
+            {{kaka.price}}kr
+          </div>
+        </q-card-section>
+
         <q-separator />
 
-        <q-card-actions>
-          <q-btn
-            flat
-            round
-            icon="event"
-          />
-          <q-btn flat>
-            7:30PM
-          </q-btn>
-          <q-btn
-            flat
-            color="primary"
-          >
-            Reserve
-          </q-btn>
+        <q-card-actions
+          vertical
+          align="center"
+        >
+          <q-btn label="Add" />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -84,4 +86,8 @@ export default
 
 </script>
 
-<style></style>
+<style>
+.card {
+  background-color: #ffcb66;
+}
+</style>

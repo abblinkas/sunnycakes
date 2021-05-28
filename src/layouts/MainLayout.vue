@@ -5,17 +5,24 @@
   >
     <q-header
       elevated
-      class="header "
+      class="header"
     >
       <q-toolbar v-if="$router.currentRoute.path !== '/login' ">
+
         <img
           class="rotateimg"
           src="../assets/cake.png"
           alt="cake"
-          height="75px"
-          width="75px"
+          height="60px"
+          width="60px"
         >
-
+        <q-btn
+          unelevated
+          class="about"
+          label="about us"
+          style="width: 7%"
+          size="lg"
+        />
         <q-toolbar-title class="title">Sunnycakes</q-toolbar-title>
         <q-btn
           flat
@@ -64,12 +71,16 @@ export default {
   transform: rotate(15deg);
 }
 .title {
+  margin-right: 7%;
   text-align: center;
   font-size: 40px;
   color: #ffcb66;
   font-weight: 700;
 }
 .shoppingCart {
+  color: #ffcb66;
+}
+.about {
   color: #ffcb66;
 }
 </style>

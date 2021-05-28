@@ -27,25 +27,19 @@
           v-model="username"
           type="email"
           placeholder="Email:"
-          class="q-mx-auto q-mt-lg input"
+          class="q-mx-auto q-mt-lg input q-mb-lg"
         >
           <template v-slot:prepend>
             <q-icon name="mail" />
           </template>
         </q-input>
-        <span
-          class="q-pb-lg q-pt-sm q-mr-lg text"
-          style="float: right"
-        >
-          Forgot Password?
-        </span>
         <q-input
           style="width: 90%"
           outlined
           v-model="password"
           :type="isPwd ? 'password' : 'text'"
           placeholder="Password:"
-          class="q-mx-auto q-my-lg input"
+          class="q-mx-auto q-mt-lg input q-mb-sm"
         >
           <template v-slot:prepend>
             <q-icon name="lock" />
@@ -58,6 +52,12 @@
             />
           </template>
         </q-input>
+        <span
+          class="q-pb-lg q-mr-lg text"
+          style="float: right"
+        >
+          Forgot Password?
+        </span>
         <q-btn
           class="button"
           label="Logga in"

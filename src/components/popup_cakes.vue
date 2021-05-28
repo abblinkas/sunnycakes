@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-none full-height">
+  <div class="q-pa-md cards">
     <!-- you define your Vue template here -->
     <q-card
       class="my-card no-margin full-height "
@@ -87,7 +87,7 @@ export default
 </script>
 
 <style>
-.card {
-  background-color: #ffcb66;
+.cards {
+  height: 500px;
 }
 </style>

@@ -1,8 +1,14 @@
 <template>
-  <div class="q-pa-none full-height">
+  <div class="q-pa-md cards">
     <!-- you define your Vue template here -->
-    <q-card class="my-card no-margin full-height " @click="alert = true">
-      <img style="height: 70%" :src="kaka.avatar" />
+    <q-card
+      class="my-card no-margin full-height full-width"
+      @click="alert = true"
+    >
+      <img
+        style="height: 70%"
+        :src="kaka.avatar"
+      />
 
       <q-card-section class="q-pa-sm">
         <div class="text-h4">{{ kaka.name }}</div>
@@ -15,11 +21,10 @@
     </q-card>
 
     <q-dialog v-model="alert">
-      <q-card class="my-card" flat bordered>
+      <q-card class="my-card">
         <q-card-section>
           <q-card-section class="col-3 flex flex-center">
             <q-img
-              class="rounded-borders"
               style="height: 100%"
               :src="kaka.avatar"
             />
@@ -28,7 +33,11 @@
 
         <q-card-section class="q-pt-xs">
           <!-- <div class="text-overline">Overline</div> -->
-          <div class="text-h4 q-mb-lg" vertical align="center">
+          <div
+            class="text-h4 q-mb-lg"
+            vertical
+            align="center"
+          >
             {{ kaka.name }}
           </div>
           <div>
@@ -49,10 +58,10 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       alert: false
-    };
+    }
   },
   name: "staffcard",
   props: ["kaka"]

@@ -1,11 +1,30 @@
 <template>
-  <q-layout view="hHh Lpr lff" class="layout" container style="height: 100vh">
-    <q-header elevated class="header">
+  <q-layout
+    view="hHh Lpr lff"
+    class="layout"
+    container
+    style="height: 100vh"
+  >
+    <q-header
+      elevated
+      class="header"
+    >
       <q-toolbar v-if="$router.currentRoute.path !== '/login'">
         <q-btn
+          v-if="$router.currentRoute.path !== '/staff'"
+          @click="redirect('/staff')"
           unelevated
           class="about"
-          label="about us"
+          label="Staff"
+          style="width: 7%"
+          size="lg"
+        />
+        <q-btn
+          v-if="$router.currentRoute.path !== '/'"
+          @click="redirect('/')"
+          unelevated
+          class="about"
+          label="Shop"
           style="width: 7%"
           size="lg"
         />
@@ -29,6 +48,7 @@
       </q-toolbar>
     </q-header>
     <q-drawer
+      side="left"
       v-model="drawerRight"
       bordered
       :width="400"
@@ -36,14 +56,21 @@
       show-if-above
     >
       <div class="row no-wrap justify-center q-pt-lg">
-        <div style="width: 100%;" class="column items-center">
+        <div
+          style="width: 100%;"
+          class="column items-center"
+        >
           <q-avatar size="150px">
             <img src="https://cdn.fakercloud.com/avatars/ganserene_128.jpg" />
           </q-avatar>
           <div class="text-h5 q-mt-md">Linus Kasper</div>
-          <div style="width: 100%;" class="column q-pt-lg bottom">
-            <q-btn flat label="Logga ut" />
-          </div>
+
+          <q-btn
+            class="bottom"
+            flat
+            label="Sign out"
+          />
+
         </div>
       </div>
     </q-drawer>
@@ -57,10 +84,15 @@
 export default {
   name: "MainLayout",
 
-  data() {
+  data () {
     return {
       drawerRight: false
-    };
+    }
+  },
+  methods: {
+    redirect (address) {
+      this.$router.push(address)
+    },
   }
 };
 </script>
@@ -96,5 +128,7 @@ export default {
 .bottom {
   position: fixed;
   bottom: 0;
+  width: 100%;
+  font-size: 20px;
 }
 </style>

@@ -6,7 +6,7 @@
         v-for="n in cakeslist"
         :key="n"
       >
-        <cakecard :kaka="n" />
+        <staffcard :kaka="n" />
 
       </div>
     </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import cakecard from '../components/popup_cakes'
+import staffcard from '../components/members'
 import db from '../assets/db.json'
 
 
@@ -24,12 +24,12 @@ export default {
   data () {
     return {
       alert: false,
-      cakeslist: db.cakes,
+      cakeslist: db.staff,
       title: db.cakes[0].title
     }
   },
   components: {
-    cakecard
+    staffcard
 
   }
 

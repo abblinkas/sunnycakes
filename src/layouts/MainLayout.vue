@@ -1,15 +1,7 @@
 <template>
-  <q-layout
-    view="hHh Lpr lff"
-    class="layout"
-    container
-    style="height: 100vh"
-  >
-    <q-header
-      elevated
-      class="header"
-    >
-      <q-toolbar v-if="$router.currentRoute.path !== '/login' ">
+  <q-layout view="hHh Lpr lff" class="layout" container style="height: 100vh">
+    <q-header elevated class="header">
+      <q-toolbar v-if="$router.currentRoute.path !== '/login'">
         <q-btn
           unelevated
           class="about"
@@ -23,7 +15,7 @@
           alt="cake"
           height="60px"
           width="60px"
-        >
+        />
         <q-toolbar-title class="title">Sunnycakes</q-toolbar-title>
         <q-btn
           flat
@@ -34,7 +26,6 @@
           class="shoppingCart"
           size="xl"
         />
-
       </q-toolbar>
     </q-header>
     <q-drawer
@@ -45,27 +36,16 @@
       show-if-above
     >
       <div class="row no-wrap justify-center q-pt-lg">
-        <div
-          style="width: 100%;"
-          class="column items-center"
-        >
+        <div style="width: 100%;" class="column items-center">
           <q-avatar size="150px">
-            <img src="https://cdn.fakercloud.com/avatars/ganserene_128.jpg">
-
+            <img src="https://cdn.fakercloud.com/avatars/ganserene_128.jpg" />
           </q-avatar>
           <div class="text-h5 q-mt-md">Linus Kasper</div>
-          <div
-            style="width: 100%;"
-            class="column q-pt-lg bottom"
-          >
-            <q-btn
-              flat
-              label="Logga ut"
-            />
+          <div style="width: 100%;" class="column q-pt-lg bottom">
+            <q-btn flat label="Logga ut" />
           </div>
         </div>
       </div>
-
     </q-drawer>
     <q-page-container>
       <router-view />
@@ -74,17 +54,15 @@
 </template>
 
 <script>
-
-
 export default {
-  name: 'MainLayout',
+  name: "MainLayout",
 
-  data () {
+  data() {
     return {
       drawerRight: false
-    }
+    };
   }
-}
+};
 </script>
 
 <style>
@@ -120,5 +98,3 @@ export default {
   bottom: 0;
 }
 </style>
-
-  

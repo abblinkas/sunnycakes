@@ -1,19 +1,13 @@
 <template>
   <div class="q-pa-md cards">
     <!-- you define your Vue template here -->
-    <q-card
-      class="my-card no-margin full-height "
-      @click="alert = true"
-    >
-      <img
-        style="height: 70%"
-        :src="kaka.image"
-      />
+    <q-card class="my-card no-margin full-height " @click="alert = true">
+      <img style="height: 70%" :src="kaka.image" />
 
       <q-card-section class="q-pa-sm">
-        <div class="text-h6">{{kaka.title}}</div>
+        <div class="text-h6">{{ kaka.title }}</div>
         <div class="text-subtitle2">
-          {{kaka.previewDescription}}
+          {{ kaka.previewDescription }}
         </div>
       </q-card-section>
 
@@ -21,73 +15,46 @@
     </q-card>
 
     <q-dialog v-model="alert">
-      <q-card
-        class="my-card"
-        flat
-        bordered
-      >
-
-        <q-card-section>
-          <q-card-section class="col-3 flex flex-center">
-            <q-img
-              class="rounded-borders"
-              style="height: 100%"
-              :src="kaka.image"
-            />
-          </q-card-section>
-        </q-card-section>
+      <q-card class="my-card no-margin full-height full-width">
+        <q-img style="height: 50%;  " :src="kaka.image" />
 
         <q-card-section class="q-pt-xs">
-          <!-- <div class="text-overline">Overline</div> -->
-          <div
-            class="text-h4 q-mt-sm q-mb-xs"
-            vertical
-            align="center"
-          >{{kaka.title}}</div>
+          <div class="text-h4 q-mt-sm q-mb-xs" vertical align="center">
+            {{ kaka.title }}
+          </div>
           <div class="text-h7 text-black">
-            {{kaka.detailDescription}}
+            {{ kaka.detailDescription }}
           </div>
-          <div
-            class="text-h3"
-            vertical
-            align="center"
-          >
-            {{kaka.price}}kr
-          </div>
+          <div class="text-h3" vertical align="center">{{ kaka.price }}kr</div>
         </q-card-section>
 
-        <q-separator />
+        <q-separator class="bottom" />
 
-        <q-card-actions
-          vertical
-          align="center"
-        >
+        <q-card-actions vertical align="center">
           <q-btn label="Add" />
         </q-card-actions>
       </q-card>
     </q-dialog>
-
   </div>
-
 </template>
 
 <script>
-export default
-  {
-    data () {
-      return {
-        alert: false
-      }
-    },
-    name: 'cakecard',
-    props: ['kaka']
-  };
-
-
+export default {
+  data() {
+    return {
+      alert: false
+    };
+  },
+  name: "cakecard",
+  props: ["kaka"]
+};
 </script>
 
 <style>
 .cards {
   height: 500px;
+}
+.bottom {
+  align-items: flex-end;
 }
 </style>

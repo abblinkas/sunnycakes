@@ -55,6 +55,7 @@
             size="lg"
             color="green"
             label="Add to cart"
+            @click="addInfo"
           />
         </q-card-actions>
       </q-card>
@@ -70,8 +71,22 @@ export default {
     }
   },
   name: "cakecard",
-  props: ["kaka"]
+  props: ["kaka"],
+  methods: {
+    addInfo () {
+      const item = {
+        id: this.kaka.id,
+        title: this.kaka.title,
+        price: this.kaka.price,
+        quantity: 1
+      }
+      if (!this.$store.getters.isItemInCart(item)) {
+        this.$store.commit("ADD_ITEM", item)
+      }
+    }
+  }
 };
+
 </script>
 
 <style>

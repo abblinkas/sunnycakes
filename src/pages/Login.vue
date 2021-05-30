@@ -18,8 +18,8 @@
         Sunnycakes
       </span>
       <q-card
-        style="width: 20%"
-        class="card q-pb-lg"
+        style="width: 20%; background-color: #90baf5"
+        class="q-pb-lg"
       >
         <q-input
           style="width: 90%"
@@ -59,6 +59,7 @@
           Forgot Password?
         </span>
         <q-btn
+          @click="signIn"
           class="button"
           label="Logga in"
           style="width: 90%"
@@ -66,8 +67,8 @@
         />
       </q-card>
       <q-card
-        class="row justify-center items-center text-center card"
-        style="width: 20%"
+        class="row justify-center items-center text-center"
+        style="width: 20%; background-color: #90baf5"
       >
         <div class="q-pa-md">
           <span
@@ -89,21 +90,28 @@
 export default {
   data () {
     return {
-      username: '',
-      password: '',
+      username: 'Kellie_Kunde1@yahoo.com',
+      password: 'Bt9BnesdD3IW3tb',
       loginError: false,
       isPwd: true,
     }
+  },
+  methods: {
+    signIn () {
+      this.$store.dispatch("signIn", [this.username, this.password]).then(status => {
+        if (status == true) {
+          this.$router.push("/")
+        }
+      })
+    },
   }
 }
+
 </script>
 
 <style>
 .background {
   background-image: linear-gradient(#1451a8, #90baf5);
-}
-.card {
-  background-color: #90baf5;
 }
 .input {
   background-color: white;

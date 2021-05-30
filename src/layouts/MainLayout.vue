@@ -1,6 +1,6 @@
 <template>
   <q-layout
-    view="hHh Lpr lff"
+    view="hHh LpR ffr"
     class="layout"
     container
     style="height: 100vh"
@@ -37,6 +37,7 @@
         />
         <q-toolbar-title class="title">Sunnycakes</q-toolbar-title>
         <q-btn
+          v-if="$router.currentRoute.path !== '/staff'"
           flat
           @click="drawerRight = !drawerRight"
           round
@@ -48,12 +49,11 @@
       </q-toolbar>
     </q-header>
     <q-drawer
-      side="left"
+      side="right"
       v-model="drawerRight"
       bordered
       :width="400"
       :breakpoint="500"
-      show-if-above
     >
       <div class="row no-wrap justify-center q-pt-lg">
         <div
@@ -61,16 +61,23 @@
           class="column items-center"
         >
           <q-avatar size="150px">
-            <img src="https://cdn.fakercloud.com/avatars/ganserene_128.jpg" />
+            <img :src="$store.state.user.avatar" />
           </q-avatar>
-          <div class="text-h5 q-mt-md">Linus Kasper</div>
+          <div class="text-h5 q-mt-md space">{{$store.state.user.name}}</div>
+          <div
+            class="q-px-lg"
+            v-for="(n,index) in $store.state.cart"
+            :key="index"
+          >
+            <order :orders="n" />
 
+          </div>
           <q-btn
-            class="bottom"
+            class="bottom button"
             flat
             label="Sign out"
+            @click="signOut"
           />
-
         </div>
       </div>
     </q-drawer>
@@ -81,6 +88,8 @@
 </template>
 
 <script>
+import db from '../assets/db.json'
+import order from '../components/order'
 export default {
   name: "MainLayout",
 
@@ -91,9 +100,22 @@ export default {
   },
   methods: {
     redirect (address) {
+      if (this.drawerRight == true) {
+        this.drawerRight = false
+      }
       this.$router.push(address)
     },
-  }
+    signOut () {
+      if (this.drawerRight == true) {
+        this.drawerRight = false
+      }
+      this.$store.commit("REMOVE_USER")
+      this.$router.push("/login")
+    }
+  },
+  components: {
+    order
+  },
 };
 </script>
 
@@ -130,5 +152,12 @@ export default {
   bottom: 0;
   width: 100%;
   font-size: 20px;
+}
+.bottom1 {
+  width: 100%;
+  font-size: 20px;
+}
+.space {
+  margin-bottom: 50%;
 }
 </style>

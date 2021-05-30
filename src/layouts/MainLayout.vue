@@ -1,21 +1,15 @@
 <template>
   <q-layout
-    view="lHh Lpr lFf"
+    view="hHh Lpr lff"
     class="layout"
+    container
+    style="height: 100vh"
   >
     <q-header
       elevated
       class="header"
     >
       <q-toolbar v-if="$router.currentRoute.path !== '/login' ">
-
-        <img
-          class="rotateimg"
-          src="../assets/cake.png"
-          alt="cake"
-          height="60px"
-          width="60px"
-        >
         <q-btn
           unelevated
           class="about"
@@ -23,6 +17,13 @@
           style="width: 7%"
           size="lg"
         />
+        <img
+          class="rotateimg1"
+          src="../assets/cake.png"
+          alt="cake"
+          height="60px"
+          width="60px"
+        >
         <q-toolbar-title class="title">Sunnycakes</q-toolbar-title>
         <q-btn
           flat
@@ -36,6 +37,36 @@
 
       </q-toolbar>
     </q-header>
+    <q-drawer
+      v-model="drawerRight"
+      bordered
+      :width="400"
+      :breakpoint="500"
+      show-if-above
+    >
+      <div class="row no-wrap justify-center q-pt-lg">
+        <div
+          style="width: 100%;"
+          class="column items-center"
+        >
+          <q-avatar size="150px">
+            <img src="https://cdn.fakercloud.com/avatars/ganserene_128.jpg">
+
+          </q-avatar>
+          <div class="text-h5 q-mt-md">Linus Kasper</div>
+          <div
+            style="width: 100%;"
+            class="column q-pt-lg bottom"
+          >
+            <q-btn
+              flat
+              label="Logga ut"
+            />
+          </div>
+        </div>
+      </div>
+
+    </q-drawer>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -50,7 +81,7 @@ export default {
 
   data () {
     return {
-
+      drawerRight: false
     }
   }
 }
@@ -63,16 +94,16 @@ export default {
 .header {
   background-color: #1451a8;
 }
-.rotateimg {
+.rotateimg1 {
   -webkit-transform: rotate(15deg);
   -moz-transform: rotate(15deg);
   -ms-transform: rotate(15deg);
   -o-transform: rotate(15deg);
   transform: rotate(15deg);
+  margin-left: 36%;
 }
 .title {
-  margin-right: 7%;
-  text-align: center;
+  text-align: start;
   font-size: 40px;
   color: #ffcb66;
   font-weight: 700;
@@ -82,6 +113,12 @@ export default {
 }
 .about {
   color: #ffcb66;
+  margin-left: -1%;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
 }
 </style>
 
+  
